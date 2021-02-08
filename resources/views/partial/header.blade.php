@@ -7,6 +7,7 @@
           <li class="active"><a href={{route('home')}}>{{$compoCont[0]->paraComp}}</a></li>
           <li><a href={{route('article')}}>{{$compoCont[1]->paraComp}}</a></li>
           <li><a href={{route('contact')}}>{{$compoCont[2]->paraComp}}</a></li>
+          <li><a href="{{route('admin')}}">admin</a></li>
         </ul>
       </nav>
       <h1 class="logo"><a href="index.html">{{$compoCont[3]->paraComp}}</a></h1>
