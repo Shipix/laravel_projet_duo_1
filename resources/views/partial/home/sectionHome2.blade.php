@@ -15,9 +15,9 @@
                 {{$homeCont[8]->paraHome}}
               </p>
               <ul>
-                <li><i class="{{$compoCont[10]->paraComp}}"></i>{{$homeCont[9]->paraHome}}</li>
-                <li><i class="{{$compoCont[10]->paraComp}}"></i>{{$homeCont[10]->paraHome}}</li>
-                <li><i class="{{$compoCont[10]->paraComp}}"></i>{{$homeCont[11]->paraHome}}</li>
+                @foreach ($bps as $item)
+                <li><i class="{{$compoCont[10]->paraComp}}"></i>{{$item->contenu}}</li>
+              @endforeach
               </ul>
               <p class="font-italic">
                 {{$homeCont[12]->paraHome}}

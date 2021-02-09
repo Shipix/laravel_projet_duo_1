@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Article;
+use App\Models\BulletPointFirst;
+use App\Models\BulletPointSecond;
 use App\Models\Composant;
 
-class AdminController extends Controller
-{
+class AdminController extends Controller{
     public function store(Request $request){
         $store = new Article; 
         $store->titre = $request->titre;
@@ -19,6 +20,9 @@ class AdminController extends Controller
     }
     public function index(){
         $compoCont=Composant::all();
-        return view('Admin', compact('compoCont'));
+        $articleCont=Article::all();
+        $bpf=BulletPointFirst::all();
+        $bps=BulletPointSecond::all();
+        return view('Admin', compact('compoCont', 'articleCont', 'bpf', 'bps'));
     }
 }
