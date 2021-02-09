@@ -10,8 +10,8 @@
             @endforeach
           </ul>
           <div class="mt-3">
-            <a href="#about" class="btn-get-started scrollto">{{$homeCont[4]->paraHome}}</a>
-            <a href="" class="btn-get-quote">{{$homeCont[5]->paraHome}}</a>
+            <a href="#about" class="btn-get-started scrollto">{{$homeCont[1]->paraHome}}</a>
+            <a href="" class="btn-get-quote">{{$homeCont[2]->paraHome}}</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
