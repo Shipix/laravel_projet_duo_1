@@ -13,4 +13,10 @@ class Li1Controller extends Controller
         $store->save();
         return redirect()->back();
     }
+    public function destroy($id)
+    {
+        $destroy = BulletPointFirst::find($id);
+        $destroy->delete();
+        return redirect()->back();
+    }
 }

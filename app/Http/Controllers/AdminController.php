@@ -25,4 +25,11 @@ class AdminController extends Controller{
         $bps=BulletPointSecond::all();
         return view('Admin', compact('compoCont', 'articleCont', 'bpf', 'bps'));
     }
+    public function destroy($id)
+    {
+        $destroy = Article::find($id);
+        $destroy->delete();
+        return redirect()->back();
+    }
+
 }

@@ -13,4 +13,10 @@ class Li2Controller extends Controller
         $store->save();
         return redirect()->back();
     }
+    public function destroy($id)
+    {
+        $destroy = BulletPointSecond::find($id);
+        $destroy->delete();
+        return redirect()->back();
+    }
 }

@@ -1,10 +1,12 @@
-<table class="table table-dark container">
+<table class="table container">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Titre</th>
-        <th scope="col">Sous-titre</th>
-        <th scope="col">Contenu</th>
+        {{-- <th scope="col">Sous-titre</th>
+        <th scope="col">Contenu</th> --}}
+        <th scope="col">Show</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -12,11 +14,20 @@
         <tr>
           <th scope="row">{{$article->id}}</th>
           <td>{{$article->titre}}</td>
-          <td>{{$article->nom}}</td>
-          <td>{{$article->paraArticle}}</td>
+          {{-- <td>{{$article->nom}}</td>
+          <td>{{$article->paraArticle}}</td> --}}
+          <td><a class="btn btn-success" href="/article-show/{{$article->id}}">show</a></td>
+          <td>
+            <form action="/delete-article/{{$article->id}}" method="POST">
+              @csrf
+              <button type="submit" class="btn btn-danger">
+                 Delete
+              </button>
+            </form>
+          </td>
         </tr>
         @endforeach
-    </tbody>
+    </tbody> 
 </table>
 <div class="container p-5">
     <h1 class="my-5 text-center">
@@ -43,18 +54,27 @@
     </form>
 </div>
 
-<table class="table table-dark">
+<table class="table container">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Contenu</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
-    @foreach ($bpf as $item)
+    @foreach ($bpf as $list)
     <tbody>
       <tr>
-        <th scope="row">{{$item->ID}}</th>
-        <td>{{$item->contenu}}</td>
+        <th scope="row">{{$list->id}}</th>
+        <td>{{$list->contenu}}</td>
+        <td>
+          <form action="/delete-list1/{{$list->id}}" method="POST">
+            @csrf
+            <button type="submit" class="btn btn-danger">
+              Delete
+            </button>
+          </form>
+        </td>
       </tr>
     </tbody>
     @endforeach
@@ -74,18 +94,27 @@
     </form>
 </div>
 
-<table class="table table-dark">
+<table class="table container">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Contenu</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
-    @foreach ($bps as $item)
+    @foreach ($bps as $list)
     <tbody>
       <tr>
-        <th scope="row">{{$item->ID}}</th>
-        <td>{{$item->contenu}}</td>
+        <th scope="row">{{$list->id}}</th>
+        <td>{{$list->contenu}}</td>
+        <td>
+          <form action="/delete-list2/{{$list->id}}" method="POST">
+            @csrf
+            <button type="submit" class="btn btn-danger">
+              Delete
+            </button>
+          </form>
+        </td>
       </tr>
     </tbody>
     @endforeach
