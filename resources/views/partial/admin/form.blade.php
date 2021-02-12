@@ -6,6 +6,7 @@
         {{-- <th scope="col">Sous-titre</th>
         <th scope="col">Contenu</th> --}}
         <th scope="col">Show</th>
+        <th scope="col">Edit</th>
         <th scope="col">Delete</th>
       </tr>
     </thead>
@@ -17,6 +18,7 @@
           {{-- <td>{{$article->nom}}</td>
           <td>{{$article->paraArticle}}</td> --}}
           <td><a class="btn btn-success" href="/article-show/{{$article->id}}">show</a></td>
+          <td><a class="btn btn-warning" href="/article-edit/{{$article->id}}">Edit</a></td>
           <td>
             <form action="/delete-article/{{$article->id}}" method="POST">
               @csrf
