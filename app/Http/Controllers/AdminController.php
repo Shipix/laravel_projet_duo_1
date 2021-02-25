@@ -11,6 +11,12 @@ use App\Models\Composant;
 
 class AdminController extends Controller{
     public function store(Request $request){
+
+        $validation = $request->validate([
+            "titre" => 'required',
+            "nom" => 'required',
+            "paraArticle" => 'required'
+        ]);
         $store = new Article; 
         $store->titre = $request->titre;
         $store->nom = $request->nom;

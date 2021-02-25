@@ -13,4 +13,3 @@
         </div>
     </section>
 @endsection
-ceci est un test
